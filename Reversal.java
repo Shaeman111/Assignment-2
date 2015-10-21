@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Reversal {
 
@@ -10,6 +11,7 @@ public class Reversal {
 		   Scanner scn = new Scanner(input);
 	        PrintWriter out = new PrintWriter(output);
 	        int lines = 0;
+	        
 		
 	       try {
 		        while (scn.hasNextLine()) {
@@ -26,8 +28,21 @@ public class Reversal {
 		        
 		        for(int i=lineAmount.length - 1; i>=0; i--){ //maybe more efficient without >=
 		        	String reversedlines = lineAmount[i];
-		      
-						out.println(reversedlines);
+		        	Scanner scn2 = new Scanner(reversedlines);
+		        	ArrayList <String> line = new ArrayList <String>();
+		        	while (scn2.hasNext()){
+		        		line.add(scn2.next());
+		        	}
+		        	for (int j=line.size() - 1; j>=1; j--){
+		        		out.print(line.get(j) + " ");
+		        		
+		        	}
+		        	if (line.size() > 0){
+	        			out.println(line.get(0));
+	        		}
+		        	else {
+						out.println("");
+		        	}
 		        }
 					out.close();
 		 }
