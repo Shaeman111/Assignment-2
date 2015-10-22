@@ -9,7 +9,6 @@ public class Reversal {
 		   Scanner scn = new Scanner(input);
 	        PrintWriter out = new PrintWriter(output);
 	        int lines = 0; 
-	        
 		
 	       try {
 		        while (scn.hasNextLine()) {
@@ -43,15 +42,10 @@ public class Reversal {
 		        	}
 		        	scn2.close();
 		        }	
-		        	
 					out.close();
 		 }
 		 catch (FileNotFoundException e) {
-			 System.out.println("You suck");
-			 System.out.println(e.getMessage());
 		        e.printStackTrace();
-			 throw new FileNotFoundException();
-			
 		    }
 }
 }
