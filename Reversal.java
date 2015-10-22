@@ -8,7 +8,7 @@ public class Reversal {
 	public static void reverseFile(File input, File output) throws FileNotFoundException {
 		   Scanner scn = new Scanner(input);
 	        PrintWriter out = new PrintWriter(output);
-	        int lines = 0;
+	        int lines = 0; 
 	        
 		
 	       try {
