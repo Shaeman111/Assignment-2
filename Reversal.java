@@ -1,7 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -38,16 +36,22 @@ public class Reversal {
 		        		
 		        	}
 		        	if (line.size() > 0){
-	        			out.println(line.get(0));
+	        			out.println(line.get(0)); //covers the case where there is no longer a space after the word
 	        		}
 		        	else {
 						out.println("");
 		        	}
-		        }
+		        	scn2.close();
+		        }	
+		        	
 					out.close();
 		 }
 		 catch (FileNotFoundException e) {
+			 System.out.println("You suck");
+			 System.out.println(e.getMessage());
 		        e.printStackTrace();
+			 throw new FileNotFoundException();
+			
 		    }
 }
 }

@@ -60,4 +60,24 @@ public class ReversalTest {
 		assertEquals(expected, actual);
 	}
 	
+	@Test (expected = FileNotFoundException.class)  // can't quite figure out how to test if it throws an exception in JUnit
+	public void testFileNotFound() throws FileNotFoundException {
+		
+		File inputFile = new File("input.txt");
+		File outputFile = new File("output.txt");
+		
+		PrintWriter write = new PrintWriter(inputFile);
+		write.println("");
+		write.close();
+		inputFile.delete();
+		Reversal.reverseFile(inputFile, outputFile);
+	}
+	
+	@Test //this test doesn't do anything, just trying something
+	public void testFileFound() throws FileNotFoundException {
+		
+		File file = new File("input.txt");
+		assertTrue(file.exists());
+	}
+	
 }
