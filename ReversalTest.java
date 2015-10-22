@@ -64,12 +64,8 @@ public class ReversalTest {
 	public void testFileNotFound() throws FileNotFoundException {
 		
 		File inputFile = new File("input.txt");
-		File outputFile = new File("output.txt");
-		
-		PrintWriter write = new PrintWriter(inputFile);
-		write.println("");
-		write.close();
 		inputFile.delete();
+		File outputFile = new File("output.txt");
 		Reversal.reverseFile(inputFile, outputFile);
 	}
 	
